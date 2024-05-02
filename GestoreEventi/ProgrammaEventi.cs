@@ -67,5 +67,12 @@ namespace GestoreEventi
 
             return result.ToString();
         }
+
+        public static void StampaEventi(List<Evento> eventi)
+        {
+            string EventiInStringa = CreaStringaDiListaEventi(eventi);
+
+            Console.WriteLine($"{EventiInStringa}");
+        }
     }
 }
