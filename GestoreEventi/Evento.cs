@@ -68,14 +68,15 @@ namespace GestoreEventi
             private set { postiPrenotati = value; }
         }
 
+        public int PostiDisponibili() => this.Posti - this.PostiPrenotati;
+
         public void PrenotaPosti (int postiDaPrenotare)
         {
             DateTime dataAttuale = DateTime.Now;
-            int postiDisponibili = this.Posti - this.PostiPrenotati;
 
-            if (postiDisponibili <= 0)
+            if (PostiDisponibili() <= 0)
                 throw new Exception("I posti disponibili sono terminati!");
-            if (postiDaPrenotare > postiDisponibili)
+            if (postiDaPrenotare > PostiDisponibili())
                 throw new Exception("I posti disponibili sono inferiori a queli da prenotare, cambia il numero di posti!");
             if (dataAttuale >= this.Data)
                 throw new Exception("Evento terminato, non puoi fare operazioni!");
