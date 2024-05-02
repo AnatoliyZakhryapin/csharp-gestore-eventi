@@ -4,11 +4,14 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
 
             Evento evento = CreaEvento();
 
             PrenotaPosti(evento);
+
+            Console.WriteLine();
+            VisualizzaPostiPrenotati(evento);
+
         }
 
         static Evento CreaEvento()
@@ -41,6 +44,11 @@
             int postiDaPrenotare = Convert.ToInt32(Console.ReadLine());
 
             evento.PrenotaPosti(postiDaPrenotare);
+        }
+
+        static void VisualizzaPostiPrenotati(Evento evento) 
+        {
+            Console.Write($"Numero di posti prenotati - {evento.PostiPrenotati}");
         }
     }
 
