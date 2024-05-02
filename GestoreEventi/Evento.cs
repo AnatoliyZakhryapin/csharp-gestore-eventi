@@ -91,7 +91,7 @@ namespace GestoreEventi
             if (dataAttuale >= this.Data)
                 throw new Exception("Evento terminato, non puoi fare operazioni!");
             if (PostiPrenotati < postiDaDisdire)
-                throw new Exception("Evento terminato, non puoi fare operazioni!");
+                throw new Exception("I posti da disdire non possono essere maggiori di posti prenotati! Cambia posti da disdire!");
 
             PostiPrenotati -= postiDaDisdire;
         }
