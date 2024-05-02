@@ -139,6 +139,10 @@
 
             Console.WriteLine();
             Console.WriteLine($"Il numero di eventi nel programma è: {newProgrammaEventi.NumeroEventi()}");
+
+            Console.WriteLine();
+            Console.WriteLine("Ecco il tuo programma eventi:");
+            Console.WriteLine($"{newProgrammaEventi.CreaStringaDiProgrammaEventi()}");
         }
     }
 

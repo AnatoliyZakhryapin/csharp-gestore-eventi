@@ -61,7 +61,7 @@ namespace GestoreEventi
         {
             StringBuilder result = new StringBuilder();
 
-            result.AppendLine($"{Titolo}:");
+            result.AppendLine($"{Titolo}");
 
             result.Append(CreaStringaDiListaEventi(Eventi));
 
