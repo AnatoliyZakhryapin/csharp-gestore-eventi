@@ -12,6 +12,8 @@
             Console.WriteLine();
             VisualizzaPostiPrenotati(evento);
             VisualizzaPostiDisponibili(evento);
+
+            StartMenuDisdirePosti(evento);
         }
 
         static Evento CreaEvento()
@@ -62,6 +64,37 @@
             int postiDaDisdire = Convert.ToInt32(Console.ReadLine());
 
             evento.DiscdiciPosti(postiDaDisdire);
+        }
+
+        static void StartMenuDisdirePosti(Evento evento)
+        {
+            while (true)
+            {
+                Console.WriteLine();
+                Console.Write("Vuoi disdire dei posti (si/no)? ");
+                bool vuoiDisdire = Console.ReadLine() == "si" ? true : false;
+
+                switch (vuoiDisdire)
+                {
+                    case true:
+                        DisdirePosti(evento);
+
+                        Console.WriteLine();
+                        VisualizzaPostiPrenotati(evento);
+                        VisualizzaPostiDisponibili(evento);
+                        break;
+                    case false:
+                        Console.WriteLine("Ok va bene!");
+
+                        Console.WriteLine();
+                        VisualizzaPostiPrenotati(evento);
+                        VisualizzaPostiDisponibili(evento);
+                        break;
+                }
+
+                if (vuoiDisdire == false)
+                    return;
+            }
         }
     }
 
