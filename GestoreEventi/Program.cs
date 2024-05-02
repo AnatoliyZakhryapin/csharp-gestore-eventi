@@ -137,7 +137,8 @@
                 }
             }
 
-
+            Console.WriteLine();
+            Console.WriteLine($"Il numero di eventi nel programma è: {newProgrammaEventi.NumeroEventi()}");
         }
     }
 
