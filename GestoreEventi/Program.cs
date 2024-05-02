@@ -145,6 +145,8 @@
             Console.WriteLine($"{newProgrammaEventi.CreaStringaDiProgrammaEventi()}");
 
             StampaEventiInData(newProgrammaEventi);
+
+            EliminaTuttiEventi(newProgrammaEventi);
         }
 
         public static void StampaEventiInData(ProgrammaEventi programmaEventi)
@@ -160,6 +162,26 @@
             List<Evento> eventiInData = programmaEventi.EventiInData(dataEvento);
 
             ProgrammaEventi.StampaEventi(eventiInData);
+        }
+
+        public static void EliminaTuttiEventi(ProgrammaEventi newProgrammaEventi)
+        {
+            Console.WriteLine();
+            Console.Write("Vuoi eliminare tutti eventi (si/no)? ");
+            bool vuoiCancellare = Console.ReadLine() == "si" ? true : false;
+
+            switch (vuoiCancellare)
+            {
+                case true:
+                    newProgrammaEventi.SvuotaListaEventi();
+
+                    Console.WriteLine("La lista di Eventi e svuotata con successo!");
+
+                    break;
+                case false:
+                    Console.WriteLine("Ok va bene!");;
+                    break;
+            }
         }
     }
 
