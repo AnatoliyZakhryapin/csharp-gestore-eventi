@@ -6,7 +6,9 @@
         {
             Console.WriteLine("Hello, World!");
 
-            CreaEvento();
+            Evento evento = CreaEvento();
+
+            PrenotaPosti(evento);
         }
 
         static Evento CreaEvento()
@@ -31,6 +33,14 @@
             Evento nuovoEvento = new Evento(titoloEvento, dataEvento, postiTotali);
 
             return nuovoEvento;
+        }
+        static void PrenotaPosti(Evento evento) 
+        {
+            Console.Write("Quanti posti desideri prenotare? ");
+
+            int postiDaPrenotare = Convert.ToInt32(Console.ReadLine());
+
+            evento.PrenotaPosti(postiDaPrenotare);
         }
     }
 
