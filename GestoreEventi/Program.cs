@@ -110,7 +110,7 @@
 
         static void StartMenuCreaNuovaProgrammaEventi()
         {
-            CreaNuovaProgrammaEventi();
+            ProgrammaEventi newProgrammaEventi = CreaNuovaProgrammaEventi();
 
             Console.Write("Indica il numero di eventi da inserire: ");
 
@@ -124,7 +124,8 @@
                 {
                     Console.WriteLine();
                     Console.WriteLine($"Evento {count}");
-                    CreaEvento();
+                    Evento nuovoEvento = CreaEvento();
+                    newProgrammaEventi.AggiungiEventoAllaLista(nuovoEvento);
                     eventiDaCreare--;
                     count++;
                 }
@@ -135,6 +136,8 @@
                     continue;
                 }
             }
+
+
         }
     }
 
