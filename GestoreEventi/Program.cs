@@ -161,7 +161,15 @@
 
             List<Evento> eventiInData = programmaEventi.EventiInData(dataEvento);
 
-            ProgrammaEventi.StampaEventi(eventiInData);
+            if (eventiInData.Count > 0 )
+            {
+                ProgrammaEventi.StampaEventi(eventiInData);
+            }
+            else 
+            { 
+                Console.WriteLine();    
+                Console.WriteLine("Non ci sono eventi per data selezionata!");
+            }
         }
 
         public static void EliminaTuttiEventi(ProgrammaEventi newProgrammaEventi)
