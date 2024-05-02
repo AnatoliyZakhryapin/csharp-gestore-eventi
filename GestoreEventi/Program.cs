@@ -143,6 +143,23 @@
             Console.WriteLine();
             Console.WriteLine("Ecco il tuo programma eventi:");
             Console.WriteLine($"{newProgrammaEventi.CreaStringaDiProgrammaEventi()}");
+
+            StampaEventiInData(newProgrammaEventi);
+        }
+
+        public static void StampaEventiInData(ProgrammaEventi programmaEventi)
+        {
+            Console.WriteLine();
+            Console.Write("Inserisci una data per sapere che eventi ci saranno (gg/mm/yyyy): ");
+
+            string inputDataEvento = Console.ReadLine();
+            string formatoData = "dd/MM/yyyy";
+
+            DateTime dataEvento = DateTime.ParseExact(inputDataEvento, formatoData, null);
+
+            List<Evento> eventiInData = programmaEventi.EventiInData(dataEvento);
+
+            ProgrammaEventi.StampaEventi(eventiInData);
         }
     }
 
