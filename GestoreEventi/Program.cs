@@ -96,6 +96,15 @@
                     return;
             }
         }
+
+        static ProgrammaEventi CreaNuovaProgrammaEventi()
+        {
+            Console.Write("Indica il nome del tuo programma Eventi: ");
+
+            string titoloProgrammaEventi = Console.ReadLine();
+
+            return new ProgrammaEventi(titoloProgrammaEventi);
+        }
     }
 
   
