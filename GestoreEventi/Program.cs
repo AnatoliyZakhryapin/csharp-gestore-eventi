@@ -11,7 +11,7 @@
 
             Console.WriteLine();
             VisualizzaPostiPrenotati(evento);
-
+            VisualizzaPostiDisponibili(evento);
         }
 
         static Evento CreaEvento()
@@ -49,6 +49,10 @@
         static void VisualizzaPostiPrenotati(Evento evento) 
         {
             Console.Write($"Numero di posti prenotati - {evento.PostiPrenotati}");
+        }
+        static void VisualizzaPostiDisponibili(Evento evento)
+        {
+            Console.WriteLine($"Numero di posti disponibili - {evento.PostiDisponibili()}");
         }
     }
 
