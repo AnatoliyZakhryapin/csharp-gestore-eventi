@@ -5,15 +5,17 @@
         static void Main(string[] args)
         {
 
-            Evento evento = CreaEvento();
+            //Evento evento = CreaEvento();
 
-            PrenotaPosti(evento);
+            //PrenotaPosti(evento);
 
-            Console.WriteLine();
-            VisualizzaPostiPrenotati(evento);
-            VisualizzaPostiDisponibili(evento);
+            //Console.WriteLine();
+            //VisualizzaPostiPrenotati(evento);
+            //VisualizzaPostiDisponibili(evento);
 
-            StartMenuDisdirePosti(evento);
+            //StartMenuDisdirePosti(evento);
+
+            StartMenuCreaNuovaProgrammaEventi();
         }
 
         static Evento CreaEvento()
@@ -104,6 +106,35 @@
             string titoloProgrammaEventi = Console.ReadLine();
 
             return new ProgrammaEventi(titoloProgrammaEventi);
+        }
+
+        static void StartMenuCreaNuovaProgrammaEventi()
+        {
+            CreaNuovaProgrammaEventi();
+
+            Console.Write("Indica il numero di eventi da inserire: ");
+
+            int eventiDaCreare = Convert.ToInt32(Console.ReadLine());
+
+            int count = 1;
+
+            while (eventiDaCreare > 0) 
+            {
+                try
+                {
+                    Console.WriteLine();
+                    Console.WriteLine($"Evento {count}");
+                    CreaEvento();
+                    eventiDaCreare--;
+                    count++;
+                }
+                catch (Exception e) 
+                {
+                    Console.WriteLine();
+                    Console.WriteLine(e.Message);
+                    continue;
+                }
+            }
         }
     }
 
