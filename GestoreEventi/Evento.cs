@@ -43,7 +43,7 @@ namespace GestoreEventi
                 if (value == DateTime.MinValue) 
                     throw new Exception("La data non può essere nulla.");
 
-                if (dataAttuale < value)
+                if (dataAttuale > value)
                     throw new Exception("La data dell'evento non puo essere nel passato!");
 
                 data = value; 
