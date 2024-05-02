@@ -37,7 +37,7 @@
 
             return nuovoEvento;
         }
-        static void PrenotaPosti(Evento evento) 
+        static void PrenotaPosti(Evento evento)
         {
             Console.Write("Quanti posti desideri prenotare? ");
 
@@ -46,13 +46,22 @@
             evento.PrenotaPosti(postiDaPrenotare);
         }
 
-        static void VisualizzaPostiPrenotati(Evento evento) 
+        static void VisualizzaPostiPrenotati(Evento evento)
         {
             Console.WriteLine($"Numero di posti prenotati - {evento.PostiPrenotati}");
         }
         static void VisualizzaPostiDisponibili(Evento evento)
         {
             Console.WriteLine($"Numero di posti disponibili - {evento.PostiDisponibili()}");
+        }
+
+        static void DisdirePosti(Evento evento)
+        {
+            Console.Write("Indica il numero di posti da disdire: ");
+
+            int postiDaDisdire = Convert.ToInt32(Console.ReadLine());
+
+            evento.DiscdiciPosti(postiDaDisdire);
         }
     }
 
