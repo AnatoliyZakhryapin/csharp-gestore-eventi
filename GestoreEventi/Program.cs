@@ -37,9 +37,24 @@
 
             int postiTotali = Convert.ToInt32(Console.ReadLine());
 
-            Evento nuovoEvento = new Evento(titoloEvento, dataEvento, postiTotali);
+            Console.WriteLine();
+            Console.Write("Questo evento è una conferenza? (si/no): ");
+            string rispostaConferenza = Console.ReadLine();
 
-            return nuovoEvento;
+            if (rispostaConferenza.ToLower() == "si")
+            {
+                Console.Write("Inserisci il nome del relatore: ");
+                string relatoreConferenza = Console.ReadLine();
+
+                Console.Write("Inserisci il prezzo dell'evento: ");
+                double prezzoConferenza = Convert.ToDouble(Console.ReadLine());
+
+                return new Conferenza(titoloEvento, dataEvento, postiTotali, relatoreConferenza, prezzoConferenza);
+            }
+            else
+            {
+                return new Evento(titoloEvento, dataEvento, postiTotali);
+            }
         }
         static void PrenotaPosti(Evento evento)
         {
@@ -144,9 +159,9 @@
             Console.WriteLine("Ecco il tuo programma eventi:");
             Console.WriteLine($"{newProgrammaEventi.CreaStringaDiProgrammaEventi()}");
 
-            StampaEventiInData(newProgrammaEventi);
+            //StampaEventiInData(newProgrammaEventi);
 
-            EliminaTuttiEventi(newProgrammaEventi);
+            //EliminaTuttiEventi(newProgrammaEventi);
         }
 
         public static void StampaEventiInData(ProgrammaEventi programmaEventi)
